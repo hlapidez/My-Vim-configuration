@@ -74,13 +74,19 @@
 " trailing-whitespace 1.0
 " http://www.vim.org/scripts/script.php?script_id=3201
 
+" VimOrganizer 0.1201
+" http://www.vim.org/scripts/script.php?script_id=3342
+
+" MediaWiki syntax 2
+" http://www.vim.org/scripts/script.php?script_id=1787
+
 
 " ------------------------------------------------
 " EXTERNAL APPLICATIONS:
 " ------------------------------------------------
 
-" Astyle 1.24            :!astyle %
+" Astyle 2.02            :!astyle %
 " http://astyle.sf.net
 
-" CURL 7.21.1            for TwitVim
+" CURL 7.21.6            for TwitVim
 " http://curl.haxx.se

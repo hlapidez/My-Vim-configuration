@@ -39,10 +39,6 @@ let MRU_Exclude_Files='\\temp\\'
 let MRU_Current_Window=1
 
 " -------------------------------------
-" --- vim-addon-manager ---
-set runtimepath+=C:\Program\ Files\vim\vim-plugins\vim-addon-manager
-
-" -------------------------------------
 " --- TwitVim ---
 let twitvim_count=75
 let twitvim_show_header=0
