@@ -97,8 +97,6 @@ smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 inoremap <expr><C-g>     neocomplcache#undo_completion()
 inoremap <expr><C-l>     neocomplcache#complete_common_string()
 
-" <CR>: close popup and save indent.
-inoremap <expr><CR>  (pumvisible() ? "\<C-y>":'') . "\<C-f>\<CR>X\<BS>"
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
@@ -109,9 +107,6 @@ inoremap <expr><C-e>  neocomplcache#cancel_popup()
 
 " ... emulate AutoComplPopup ...
 let g:neocomplcache_enable_auto_select = 1
-inoremap <expr><CR>  (pumvisible() ? "\<C-e>":'') . (&indentexpr != '' ? "\<C-f>\<CR>X\<BS>":"\<CR>")
-inoremap <expr><C-h> pumvisible() ? neocomplcache#cancel_popup()."\<C-h>" : "\<C-h>"
-inoremap <expr><BS> pumvisible() ? neocomplcache#cancel_popup()."\<C-h>" : "\<C-h>"
 
 " -------------------------------------
 " --- OrgMode ---
@@ -126,12 +121,6 @@ au BufRead,BufNewFile *.org            call org#SetOrgFileType()
 au BufRead *.org :PreLoadTags
 au BufWrite *.org :PreWriteTags
 au BufWritePost *.org :PostWriteTags
-
-" below are two examples of Org-mode "hook" functions
-" These present opportunities for end-user customization
-" of how VimOrganizer works.  For more info see the 
-" documentation for hooks in Emacs' Org-mode documentation:
-" http://orgmode.org/worg/org-configs/org-hooks.php#sec-1_40
 
 " These two hooks are currently the only ones enabled in 
 " the VimOrganizer codebase, but they are easy to add so if
