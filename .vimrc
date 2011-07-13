@@ -178,6 +178,12 @@ vnoremap < <gv
 vmap <Tab> >
 vmap <S-Tab> <
 
+" --- automatically switch to the directory of the current buffer ---
+
+if has('autocmd')
+  autocmd BufEnter * cd %:p:h
+endif
+
 " --- tab navigation like Firefox ---
 
 nmap <C-S-tab> :tabprevious<CR>
