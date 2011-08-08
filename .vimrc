@@ -126,22 +126,37 @@ function DispFileType()
     return "[plain]"
 endfunction
 
-hi User1 ctermbg=black ctermfg=yellow guibg=black guifg=yellow  " %1*
-hi User2 ctermbg=black ctermfg=grey   guibg=black guifg=grey    " %2*
-hi User3 ctermbg=black ctermfg=red    guibg=black guifg=red     " %3*
 
 set laststatus=2          " always show statusline
 set statusline=           " start with an empty one
 
-set statusline+=\ [%n]                          " buffer number
-set statusline+=\ %1*[%-.65F]%*                 " file name (max. 65 chars)
-set statusline+=\ %2*%{DispFileType()}%m%3*%r%* " file type, modified, read-only (if applicable)
-set statusline+=\ [%{&ff}]                      " file format
-set statusline+=[%{strlen(&fenc)?&fenc:'none'}] " file encoding
-set statusline+=\ %=                            " switch to the right
-set statusline+=\ %l/%L,%-5c                    " current line/total lines,current column
-set statusline+=\ [%{DispCurrMode()}]           " current mode as a 3-letter code
-set statusline+=\ %P\                           " percentage of current file
+if has("gui")
+" --- own status line (GUI version) ---
+  hi User1 ctermbg=black ctermfg=yellow guibg=black guifg=yellow  " %1*
+  hi User2 ctermbg=black ctermfg=grey   guibg=black guifg=grey    " %2*
+  hi User3 ctermbg=black ctermfg=red    guibg=black guifg=red     " %3*
+
+  set statusline+=\ [%n]                          " buffer number
+  set statusline+=\ %1*[%-.65F]%*                 " file name (max. 65 chars)
+  set statusline+=\ %2*%{DispFileType()}%m%3*%r%* " file type, modified, read-only (if applicable)
+  set statusline+=\ [%{&ff}]                      " file format
+  set statusline+=[%{strlen(&fenc)?&fenc:'none'}] " file encoding
+  set statusline+=\ %=                            " switch to the right
+  set statusline+=\ %l/%L,%-5c                    " current line/total lines,current column
+  set statusline+=\ [%{DispCurrMode()}]           " current mode as a 3-letter code
+  set statusline+=\ %P\                           " percentage of current file
+else
+" --- own status line (CLI version) ---
+  set statusline+=\ [%n]                          " buffer number
+  set statusline+=\ [%-.65F]                      " file name (max. 65 chars)
+  set statusline+=\ %{DispFileType()}%m%r         " file type, modified, read-only (if applicable)
+  set statusline+=\ [%{&ff}]                      " file format
+  set statusline+=[%{strlen(&fenc)?&fenc:'none'}] " file encoding
+  set statusline+=\ %=                            " switch to the right
+  set statusline+=\ %l/%L,%-5c                    " current line/total lines,current column
+  set statusline+=\ [%{DispCurrMode()}]           " current mode as a 3-letter code
+  set statusline+=\ %P\                           " percentage of current file
+endif
 
 if has("autocmd")
 " --- highlight settings ---
@@ -202,15 +217,16 @@ imap <C-t> <Esc>:tabnew<CR>
 " --- oh, BTW, Firefox: call it on demand ---
 
 function! Browser()
-    let $PATH = $PATH . ';c:\Program Files\Mozilla Firefox'
-    " REMARK: Remember to set the path accordingly on other systems
+    if has("win32")
+      let $PATH = $PATH . ';c:\Program Files\Mozilla Firefox'
+    endif
     let line0 = getline(".")
     let line = matchstr(line0, "http[^ ]*")
     if line==""
         let line = matchstr (line0, "ftp[^ ]*")
     endif
     let line = escape(line, "#;|%")
-    exec ':silent !firefox.exe ' . "\"" . line . "\""
+    exec ':silent !firefox ' . "\"" . line . "\""
 endfunction
 map ,w :call Browser()<CR>
 

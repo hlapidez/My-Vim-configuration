@@ -11,7 +11,7 @@
 " The NERD tree 4.1.0
 " http://www.vim.org/scripts/script.php?script_id=1658
 
-" SuperTab 1.5
+" SuperTab 1.6
 " http://www.vim.org/scripts/script.php?script_id=1643
 
 " The NERD Commenter 2.3.0
@@ -20,7 +20,7 @@
 " snipMate 0.83
 " http://www.vim.org/scripts/script.php?script_id=2540
 
-" AutoFenc 1.3
+" AutoFenc 1.3.1
 " http://vim.sourceforge.net/scripts/script.php?script_id=2721
 
 " vcscommand.vim 1.99.43
@@ -47,7 +47,7 @@
 " mru.vim 3.3
 " http://www.vim.org/scripts/script.php?script_id=521
 
-" histwin.vim 0.21
+" histwin.vim 0.24
 " http://www.vim.org/scripts/script.php?script_id=2932
 
 " vimcommander.vim 0.80
@@ -80,7 +80,7 @@
 " MediaWiki syntax 2
 " http://www.vim.org/scripts/script.php?script_id=1787
 
-" UltraBlog 2.3.0
+" UltraBlog 3.0.0
 " http://www.vim.org/scripts/script.php?script_id=3532
 
 

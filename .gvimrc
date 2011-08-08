@@ -2,7 +2,10 @@
 " tux config (gvim only)
 " -------------------------------------------------------
 
-set guifont=Consolas
+if has("win32")
+  set guifont=Consolas
+endif
+
 set guioptions=aegit " shrink the window ;)
 set mousehide        " hide the mouse when typing text
 
