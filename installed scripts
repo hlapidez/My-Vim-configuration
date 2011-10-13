@@ -23,7 +23,7 @@
 " AutoFenc 1.3.1
 " http://vim.sourceforge.net/scripts/script.php?script_id=2721
 
-" vcscommand.vim 1.99.43
+" vcscommand.vim 1.99.44
 " http://www.vim.org/scripts/script.php?script_id=90
 
 " surround.vim 1.34
@@ -41,19 +41,19 @@
 " Vimperator/Muttator Syntax Highlighting
 " (ftdetect/syntax dirs) from Mercurial
 
-" TwitVim 0.7.0
+" TwitVim 0.7.1
 " http://www.vim.org/scripts/script.php?script_id=2204
 
 " mru.vim 3.3
 " http://www.vim.org/scripts/script.php?script_id=521
 
-" histwin.vim 0.24
+" histwin.vim 25
 " http://www.vim.org/scripts/script.php?script_id=2932
 
 " vimcommander.vim 0.80
 " http://www.vim.org/scripts/script.php?script_id=808
 
-" ZenCoding.vim 0.53
+" ZenCoding.vim 0.54
 " http://www.vim.org/scripts/script.php?script_id=2981
 
 " eclim 1.6.3
@@ -65,7 +65,7 @@
 " yaifa 1.3
 " http://www.vim.org/scripts/script.php?script_id=3096
 
-" neocomplcache 6.0
+" neocomplcache 6.1
 " http://www.vim.org/scripts/script.php?script_id=2620
 
 " Better CSS syntax 20110302
