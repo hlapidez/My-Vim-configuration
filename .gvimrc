@@ -3,15 +3,17 @@
 " -------------------------------------------------------
 
 if has("win32")
-  set guifont=Consolas
+  set guifont=Consolas    " needs to be installed, of course.
+else
+  set guifont=Inconsolata " needs to be installed, of course.
 endif
 
 set guioptions=aegit " shrink the window ;)
 set mousehide        " hide the mouse when typing text
 
-autocmd GUIEnter * simalt ~x	 " force full screen (Windows-only)
-
-"colorscheme sean    " dark background, better coloring
+if has("win32")
+  autocmd GUIEnter * simalt ~x	 " force full screen (Windows-only)
+endif
 
 " -------------------------------------------------------
 " partially taken from the sample gvimrc:
